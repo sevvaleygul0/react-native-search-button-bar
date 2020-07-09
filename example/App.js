@@ -10,6 +10,7 @@ const App = () => {
         height={50}
         placeholder="Search.."
         placeholderTextColor="purple"
+        onChangeText={text => console.log(text)}
       />
     </View>
   );

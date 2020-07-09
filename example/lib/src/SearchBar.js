@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {View, TextInput, Dimensions} from 'react-native';
 import PropTypes from 'prop-types';
+
 import styles, {textInput} from './SearchBar.style';
 const {width: ScreenWidth} = Dimensions.get('window');
 
@@ -9,6 +10,10 @@ export default class SearchBar extends Component {
     super(props);
     this.state = {};
   }
+
+  onChangeText = text => {
+    this.props.onChangeText && this.props.onChangeText(text);
+  };
 
   render() {
     const {
@@ -21,9 +26,11 @@ export default class SearchBar extends Component {
     } = this.props;
     return (
       <View>
+        
         <TextInput
           placeholder={placeholder}
           placeholderTextColor={placeholderTextColor}
+          onChangeText={text => this.onChangeText(text)}
           style={textInput(height, width, borderWidth, borderColor)}>
           {' '}
         </TextInput>
@@ -43,5 +50,5 @@ SearchBar.defaultProps = {
   borderWidth: 1,
   placeholder: 'Arama yapınız..',
   placeholderTextColor: 'black',
-  borderColor: "purple"
+  borderColor: 'purple',
 };

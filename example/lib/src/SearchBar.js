@@ -12,8 +12,6 @@ import PropTypes from 'prop-types';
 
 import styles, {textInput, container} from './SearchBar.style';
 const {width: ScreenWidth} = Dimensions.get('window');
-const searchImage = require('../asset/search.png');
-const closeImage = require('../asset/close.png');
 
 export default class SearchBar extends Component {
   textInput = null;
@@ -57,6 +55,8 @@ export default class SearchBar extends Component {
       borderWidth,
       borderColor,
       placeholderTextColor,
+      searchImageSource,
+      closeImageSource
     } = this.props;
     return (
       <View style={container(height, width, borderWidth, borderColor)}>
@@ -74,7 +74,7 @@ export default class SearchBar extends Component {
             onPress={() => {
               this.startAnimation();
             }}>
-            <Image source={searchImage} style={{width: 25, height: 25}} />
+            <Image source={searchImageSource} style={{width: 25, height: 25}} />
           </TouchableWithoutFeedback>
         </Animated.View>
         {this.state.visibleCloseButton ? (
@@ -91,7 +91,7 @@ export default class SearchBar extends Component {
 
             <View style={{bottom: 60, marginLeft: 'auto', marginRight: 5}}>
               <TouchableWithoutFeedback onPress={() => this.endAnimation()}>
-                <Image source={closeImage} style={styles.imageStyle} />
+                <Image source={closeImageSource} style={styles.imageStyle} />
               </TouchableWithoutFeedback>
             </View>
           </View>
@@ -115,4 +115,6 @@ SearchBar.defaultProps = {
   placeholder: 'Arama yapınız..',
   placeholderTextColor: 'black',
   borderColor: 'purple',
+  searchImageSource: require('../asset/search.png'),
+  closeImageSource: require('../asset/close.png')
 };

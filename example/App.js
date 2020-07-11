@@ -6,7 +6,7 @@ const App = () => {
   return (
     <View style={styles.container}>
       <SearchBar
-        width={200}
+        width={270}
         height={50}
         placeholder="Search.."
         placeholderTextColor="purple"

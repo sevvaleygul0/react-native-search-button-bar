@@ -9,7 +9,6 @@ import {
   Text,
 } from 'react-native';
 import PropTypes from 'prop-types';
-
 import styles, {textInput, container} from './SearchBar.style';
 const {width: ScreenWidth} = Dimensions.get('window');
 
@@ -32,8 +31,9 @@ export default class SearchBar extends Component {
   };
 
   startAnimation = () => {
+    const {width} = this.props;
     Animated.timing(this.state.animation, {
-      toValue: -60,
+      toValue: -width / 2.5,
       duration: 1000,
     }).start();
     this.setState({visibleCloseButton: true});
@@ -56,17 +56,19 @@ export default class SearchBar extends Component {
       borderColor,
       placeholderTextColor,
       searchImageSource,
-      closeImageSource
+      closeImageSource,
     } = this.props;
     return (
       <View style={container(height, width, borderWidth, borderColor)}>
         <Animated.View
           style={{
-            width: 50,
+            width: 25,
+            marginLeft: 8,
             top: 10,
-            left: height + 20,
+            left: width / 2.5,
             zIndex: 99,
-            // opacity: this.state.animation,
+            alignItems: 'center',
+            justifyContent: 'center',
             transform: [{translateX: this.state.animation}],
           }}>
           <TouchableWithoutFeedback
@@ -116,5 +118,5 @@ SearchBar.defaultProps = {
   placeholderTextColor: 'black',
   borderColor: 'purple',
   searchImageSource: require('../asset/search.png'),
-  closeImageSource: require('../asset/close.png')
+  closeImageSource: require('../asset/close.png'),
 };

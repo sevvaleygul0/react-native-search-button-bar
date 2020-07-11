@@ -8,14 +8,16 @@ export const textInput = (
 ) => ({
   bottom: 26,
   borderRadius: 24,
-  paddingRight: 10,
-  paddingLeft: 36,
+  paddingRight: 12,
+  paddingLeft: 40,
   width: width - 14,
   height,
   borderWidth,
   borderColor,
   placeholder,
   placeholderTextColor,
+  justifyContent: 'center',
+  alignItems: 'center',
 });
 
 export const container = (height, width, borderWidth, borderColor) => ({

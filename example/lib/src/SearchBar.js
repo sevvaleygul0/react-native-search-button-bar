@@ -35,6 +35,7 @@ export default class SearchBar extends Component {
     Animated.timing(this.state.animation, {
       toValue: -width / 2.5,
       duration: 1000,
+      useNativeDriver: true,
     }).start();
     this.setState({visibleCloseButton: true});
   };
@@ -44,6 +45,7 @@ export default class SearchBar extends Component {
     Animated.timing(this.state.animation, {
       toValue: 0,
       duration: 800,
+      useNativeDriver: true,
     }).start();
     this.setState({visibleCloseButton: false});
   };

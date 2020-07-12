@@ -7,13 +7,15 @@
     "Sevval",
     "sevval",
     "react-native",
+    "search-bar",
     "javascript",
     "ui-lib",
     "rn"
   ],
   "bugs": "https://github.com/sevvaleygul0/react-native-search-button-bar/issues",
-  "main": "./lib/src/index.js",
-  "author": "Sevval Eygul (FreakyCoder) <sevvalleygull@gmail.com>",
+  "repository": "https://github.com/sevvaleygul0/react-native-search-button-bar",
+  "main": "./lib/src/SearchBar.js",
+  "author": "Sevval Eygul <sevvalleygull@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
     "react": ">= 16.x.x",

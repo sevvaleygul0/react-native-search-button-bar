@@ -10,12 +10,28 @@ export const textInput = (height, width, placeholderTextColor) => ({
   alignItems: 'center',
 });
 
-export const container = (height, width, borderWidth, borderColor) => ({
+export const container = (
+  height,
+  width,
+  borderWidth,
+  borderColor,
+  backgroundColor,
+  shadowColor,
+  shadowRadius,
+) => ({
   width,
   height,
   borderWidth,
   borderColor,
+  backgroundColor,
+  shadowColor,
+  shadowRadius,
   borderRadius: 24,
+  shadowOpacity: 0.4,
+  shadowOffset: {
+    width: 3,
+    height: 3,
+  },
 });
 
 export default {

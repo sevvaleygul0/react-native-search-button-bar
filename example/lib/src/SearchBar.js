@@ -63,10 +63,21 @@ export default class SearchBar extends Component {
       placeholderTextColor,
       searchImageSource,
       closeImageSource,
-      onCancel,
+      backgroundColor,
+      shadowColor,
+      shadowRadius,
     } = this.props;
     return (
-      <View style={container(height, width, borderWidth, borderColor)}>
+      <View
+        style={container(
+          height,
+          width,
+          borderWidth,
+          borderColor,
+          backgroundColor,
+          shadowColor,
+          shadowRadius,
+        )}>
         <Animated.View
           style={{
             width: 25,
@@ -92,7 +103,6 @@ export default class SearchBar extends Component {
               ref={c => {
                 this.textInput = c;
               }}
-              placeholderTextColor={placeholderTextColor}
               onChangeText={text => this.onChangeText(text)}
               style={textInput(height, width, placeholderTextColor)}
             />
@@ -126,6 +136,9 @@ SearchBar.defaultProps = {
   placeholder: 'Arama yapınız..',
   placeholderTextColor: 'black',
   borderColor: 'purple',
+  backgroundColor: 'transparent',
+  shadowColor: '#757575',
+  shadowRadius: 10,
   searchImageSource: require('../asset/search.png'),
   closeImageSource: require('../asset/close.png'),
 };

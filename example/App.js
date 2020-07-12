@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, FlatList, Dimensions} from 'react-native';
-import SearchBar from './lib/src/SearchBar';
-import data from './lib/data/StaticData';
+import data from '../lib/data/StaticData';
+import SearchBar from 'react-native-search-button-bar';
 const {width: ScreenWidth} = Dimensions.get('window');
 
 export default class App extends Component {
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   cardStyle: {
     marginTop: 20,
     height: 40,
-    backgroundColor: '#ffd6a1',
+    backgroundColor: '#fff7ed',
     borderRadius: 12,
     justifyContent: 'center',
     alignItems: 'center',

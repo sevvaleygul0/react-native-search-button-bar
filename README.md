@@ -1,4 +1,4 @@
-<img alt="React Native Library Boilerplate" src="assets/logo.png" width="1050"/>
+<img alt="React Native Library Boilerplate" src="assets/search-button-bar.png" width="1050"/>
 
 
 [![Battle Tested ✅](https://img.shields.io/badge/-Battle--Tested%20%E2%9C%85-03666e?style=for-the-badge)](https://github.com/WrathChaos/react-native-library-boilerplate)
@@ -15,7 +15,7 @@
 
 <p align="center">
   <img alt="React Native Library Boilerplate"
-        src="assets/Screenshots/JSLibraryBoilerplate.png" />
+        src="assets/Gif/gif2.gif" />
 </p>
 
 # Installation
@@ -23,7 +23,7 @@
 Add the dependency:
 
 ```ruby
-npm i react-native-library-boilerplate
+npm i react-native-search-button-bar
 ```
 
 ## Peer Dependencies
@@ -40,28 +40,35 @@ npm i react-native-library-boilerplate
 ## Import
 
 ```js
-import { Component1, Component2 } from "react-native-library-boilerplate";
+import SearchBar from "react-native-search-button-bar";
 ```
 
 ## Component1 Usage
 
 ```js
-<Component1 />
+<SearchBar />
 ```
 
 # Configuration - Props
 
 | Property |  Type   | Default | Description                                             |
 | -------- | :-----: | :-----: | ------------------------------------------------------- |
-| outline  | boolean |  true   | make the button outline                                 |
-| solid    | boolean |  false  | make the button with a solid background and a shadow    |
-| gradient | boolean |  false  | make the button with a gradient background and a shadow |
-| width    | number  |   150   | change the button's width                               |
+| width  | string OR number |  ScreenWidth * 0.9   | 	change the width of the header outline                                 |
+| height    | string OR number |  50  |	change the height of the header    |
+| borderWidth | number |  1  | change the border width |
+| borderColor    | string  |   #872d8d   | change the border color                              |
+| placeholder  | string |  Search something..   | 		set your own placeholder string                                 |
+| searchImageSource    | image |  image  |		set your own image    |
+| closeImageSource | image |  image  | set your own image |
+| backgroundColor    | string  |   transparent   | 	change the background color                               |
+| shadowColor  | string |  #757575   | 	change the shadowColor                                 |
+| shadowRadius    | string |  10  |		change the shadowRadius    |
+| onChangeText | function |  null  | set your own function  |
+| onCancel    | function  |   null   | set your own function                            |
 
 ## Future Plans
 
 - [x] ~~LICENSE~~
-- [ ] Write an article about the lib on Medium
 
 # Change Log
 
@@ -69,7 +76,7 @@ Change log will be here !
 
 ## Author
 
-FreakyCoder, kurayogun@gmail.com
+Şevval Eygül sevvalleygull@gmail.com
 
 ## License
 

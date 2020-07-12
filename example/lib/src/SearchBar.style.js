@@ -1,7 +1,6 @@
-export const textInput = (height, width, placeholderTextColor) => ({
+export const textInput = (height, width) => ({
   height,
   width,
-  placeholderTextColor,
   bottom: 26,
   borderRadius: 24,
   paddingRight: 32,

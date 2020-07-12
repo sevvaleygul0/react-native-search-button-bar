@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, FlatList} from 'react-native';
+import {View, Text, StyleSheet, FlatList, Dimensions} from 'react-native';
 import SearchBar from './lib/src/SearchBar';
 import data from './lib/data/StaticData';
+const {width: ScreenWidth} = Dimensions.get('window');
 
 export default class App extends Component {
   constructor(props) {
@@ -13,8 +14,8 @@ export default class App extends Component {
 
   renderItem = item => {
     return (
-      <View style={{marginTop: 20}}>
-        <Text>{item.name}</Text>
+      <View style={styles.cardStyle}>
+        <Text style={styles.textStyle}>{item.name}</Text>
       </View>
     );
   };
@@ -32,10 +33,9 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <SearchBar
-          // width={270}
           height={50}
-          placeholder="Search.."
-          placeholderTextColor="purple"
+          borderColor="#fff"
+          backgroundColor="#fff"
           onChangeText={text => {
             if (text.length !== 0) this.filter(text);
           }}
@@ -55,12 +55,23 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    top: 30,
+    backgroundColor: '#ff8f1a',
     justifyContent: 'center',
     alignItems: 'center',
   },
   flatListStyle: {
-    width: 270,
-    height: 200,
+    width: ScreenWidth * 0.9,
+    height: 400,
+  },
+  cardStyle: {
+    marginTop: 20,
+    height: 40,
+    backgroundColor: '#ffd6a1',
+    borderRadius: 12,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  textStyle: {
+    color: '#c07514',
   },
 });

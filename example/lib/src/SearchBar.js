@@ -60,7 +60,7 @@ export default class SearchBar extends Component {
       height,
       borderWidth,
       borderColor,
-      placeholderTextColor,
+      placeholder,
       searchImageSource,
       closeImageSource,
       backgroundColor,
@@ -100,11 +100,12 @@ export default class SearchBar extends Component {
         {this.state.visibleCloseButton ? (
           <View>
             <TextInput
-              ref={c => {
-                this.textInput = c;
+              ref={ref => {
+                this.textInput = ref;
               }}
+              placeholder={placeholder}
               onChangeText={text => this.onChangeText(text)}
-              style={textInput(height, width, placeholderTextColor)}
+              style={textInput(height, width)}
             />
             <View style={{bottom: 60, marginLeft: 'auto', marginRight: 5}}>
               <TouchableWithoutFeedback
@@ -133,8 +134,7 @@ SearchBar.defaultProps = {
   width: ScreenWidth * 0.9,
   height: 50,
   borderWidth: 1,
-  placeholder: 'Arama yapınız..',
-  placeholderTextColor: 'black',
+  placeholder: 'Search something..',
   borderColor: 'purple',
   backgroundColor: 'transparent',
   shadowColor: '#757575',

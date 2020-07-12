@@ -50,6 +50,10 @@ export default class SearchBar extends Component {
     this.setState({visibleCloseButton: false});
   };
 
+  onCancel = () => {
+    this.props.onCancel && this.props.onCancel();
+  };
+
   render() {
     const {
       width,
@@ -59,6 +63,7 @@ export default class SearchBar extends Component {
       placeholderTextColor,
       searchImageSource,
       closeImageSource,
+      onCancel,
     } = this.props;
     return (
       <View style={container(height, width, borderWidth, borderColor)}>
@@ -89,12 +94,14 @@ export default class SearchBar extends Component {
               }}
               placeholderTextColor={placeholderTextColor}
               onChangeText={text => this.onChangeText(text)}
-              style={textInput(height, width)}>
-              {' '}
-            </TextInput>
-
+              style={textInput(height, width, placeholderTextColor)}
+            />
             <View style={{bottom: 60, marginLeft: 'auto', marginRight: 5}}>
-              <TouchableWithoutFeedback onPress={() => this.endAnimation()}>
+              <TouchableWithoutFeedback
+                onPress={() => {
+                  this.onCancel();
+                  this.endAnimation();
+                }}>
                 <Image source={closeImageSource} style={styles.imageStyle} />
               </TouchableWithoutFeedback>
             </View>

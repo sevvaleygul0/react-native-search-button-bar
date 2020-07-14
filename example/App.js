@@ -1,7 +1,15 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, FlatList, Dimensions} from 'react-native';
-import data from '../lib/data/StaticData';
-import SearchBar from 'react-native-search-button-bar';
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  Dimensions,
+  Image,
+} from 'react-native';
+import data from './lib/data/StaticData';
+// import SearchBar from 'react-native-search-button-bar';
+import SearchBar from './lib/src/SearchBar';
 const {width: ScreenWidth} = Dimensions.get('window');
 
 export default class App extends Component {
@@ -9,6 +17,8 @@ export default class App extends Component {
     super(props);
     this.state = {
       staticData: data,
+      messageVisible: false,
+      graphVisible: false,
     };
   }
 
@@ -29,9 +39,31 @@ export default class App extends Component {
   onClose = () => {
     this.setState({staticData: data});
   };
+  handleLeftButton = () => {
+    this.setState({messageVisible: true, graphVisible: false});
+  };
+  handleRightButton = () => {
+    this.setState({messageVisible: false, graphVisible: true});
+  };
   render() {
     return (
       <View style={styles.container}>
+        {this.state.messageVisible ? (
+          <View style={{marginBottom: 10}}>
+            <Image
+              source={require('./lib/asset/email-1.png')}
+              style={{width: 60, height: 60}}
+            />
+          </View>
+        ) : null}
+        {this.state.graphVisible ? (
+          <View style={{marginBottom: 10}}>
+            <Image
+              source={require('./lib/asset/graph-1.png')}
+              style={{width: 60, height: 60}}
+            />
+          </View>
+        ) : null}
         <SearchBar
           height={50}
           borderColor="#fff"
@@ -40,6 +72,8 @@ export default class App extends Component {
             if (text.length !== 0) this.filter(text);
           }}
           onCancel={() => this.onClose()}
+          onPressLeftImageButton={() => this.handleLeftButton()}
+          onPressRightImageButton={() => this.handleRightButton()}
         />
         <View style={styles.flatListStyle}>
           <FlatList

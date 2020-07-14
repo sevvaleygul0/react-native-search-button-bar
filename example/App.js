@@ -8,8 +8,7 @@ import {
   Image,
 } from 'react-native';
 import data from './lib/data/StaticData';
-// import SearchBar from 'react-native-search-button-bar';
-import SearchBar from './lib/src/SearchBar';
+import SearchBar from 'react-native-search-button-bar';
 const {width: ScreenWidth} = Dimensions.get('window');
 
 export default class App extends Component {

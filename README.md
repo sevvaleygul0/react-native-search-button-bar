@@ -5,7 +5,7 @@
 
 <p align="center">
   <img alt="React Native Library Boilerplate"
-        src="assets/Gif/gif2.gif" />
+        src="assets/Gif/search-bar.gif" />
 </p>
 
 # Installation

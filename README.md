@@ -1,11 +1,10 @@
 <img alt="React Native Library Boilerplate" src="assets/search-button-bar.png" width="1050"/>
 
-
 [![Battle Tested ✅](https://img.shields.io/badge/-Battle--Tested%20%E2%9C%85-03666e?style=for-the-badge)](https://github.com/sevvaleygul0/react-native-search-button-bar)
 
 <p align="center">
   <img alt="React Native Library Boilerplate"
-        src="assets/Gif/search-bar.gif" />
+        src="assets/Gif/new-gif.gif" />
 </p>
 
 # Installation
@@ -41,20 +40,20 @@ import SearchBar from "react-native-search-button-bar";
 
 # Configuration - Props
 
-| Property |  Type   | Default | Description                                             |
-| -------- | :-----: | :-----: | ------------------------------------------------------- |
-| width  | string OR number |  ScreenWidth * 0.9   | 	change the width of the header outline                                 |
-| height    | string OR number |  50  |	change the height of the header    |
-| borderWidth | number |  1  | change the border width |
-| borderColor    | string  |   #872d8d   | change the border color                              |
-| placeholder  | string |  Search something..   | 		set your own placeholder string                                 |
-| searchImageSource    | image |  image  |		set your own image    |
-| closeImageSource | image |  image  | set your own image |
-| backgroundColor    | string  |   transparent   | 	change the background color                               |
-| shadowColor  | string |  #757575   | 	change the shadowColor                                 |
-| shadowRadius    | string |  10  |		change the shadowRadius    |
-| onChangeText | function |  null  | set your own function  |
-| onCancel    | function  |   null   | set your own function                            |
+| Property          |       Type       |      Default       | Description                            |
+| ----------------- | :--------------: | :----------------: | -------------------------------------- |
+| width             | string OR number | ScreenWidth \* 0.9 | change the width of the header outline |
+| height            | string OR number |         50         | change the height of the header        |
+| borderWidth       |      number      |         1          | change the border width                |
+| borderColor       |      string      |      #872d8d       | change the border color                |
+| placeholder       |      string      | Search something.. | set your own placeholder string        |
+| searchImageSource |      image       |       image        | set your own image                     |
+| closeImageSource  |      image       |       image        | set your own image                     |
+| backgroundColor   |      string      |    transparent     | change the background color            |
+| shadowColor       |      string      |      #757575       | change the shadowColor                 |
+| shadowRadius      |      string      |         10         | change the shadowRadius                |
+| onChangeText      |     function     |        null        | set your own function                  |
+| onCancel          |     function     |        null        | set your own function                  |
 
 ## Future Plans
 

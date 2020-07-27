@@ -32,7 +32,7 @@ export default class SearchBar extends Component {
   startAnimation = () => {
     const {width} = this.props;
     Animated.timing(this.state.animation, {
-      toValue: -width / 2.5,
+      toValue: -width / 2.3,
       duration: 1000,
       useNativeDriver: true,
     }).start();
@@ -54,7 +54,6 @@ export default class SearchBar extends Component {
   };
 
   render() {
-    debugger;
     const {
       width,
       height,
@@ -88,7 +87,7 @@ export default class SearchBar extends Component {
             width: 25,
             marginLeft: 8,
             top: 10,
-            left: width / 2.5,
+            left: width / 2.3,
             zIndex: 999,
             alignItems: 'center',
             justifyContent: 'center',
